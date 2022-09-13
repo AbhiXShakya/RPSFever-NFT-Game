@@ -9,7 +9,13 @@ export const Navbar = () => {
       <div className="mb-16 flex justify-between items-center flex-col md:flex-row">
         <Link href="/">
           <div className="cursor-pointer mb-6 md:mb-2 flex space-x-3 items-center my-2 md:my-4 lg:my-6">
-            <Image src="/logo.png" alt="logo" width={50} height={50} />
+            <Image
+              priority={true}
+              src="/logo.png"
+              alt="logo"
+              width={50}
+              height={50}
+            />
             <h1 className="text-5xl font-bold">RPS Fever</h1>
           </div>
         </Link>

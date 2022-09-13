@@ -200,6 +200,7 @@ export default function Home() {
                   <h3 className="text-2xl font-semibold ml-2">You</h3>
                   <div className="relative w-full h-40 lg:h-80 md:h-96 mb-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-lg p-6">
                     <Image
+                      priority={true}
                       src={`/nfts/${results?.["player"]}.jpeg`}
                       alt="nft"
                       layout="fill"
@@ -212,6 +213,7 @@ export default function Home() {
                   <h3 className="text-2xl font-semibold mr-2">Bot</h3>
                   <div className="relative w-full h-40 lg:h-80 md:h-96 mb-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-lg p-6">
                     <Image
+                      priority={true}
                       src={`/nfts/${results?.["bot"]}.jpeg`}
                       alt="nft"
                       layout="fill"
@@ -272,6 +274,7 @@ export default function Home() {
           <div className="grid grid-flow-rows place-items-center gap-6 mt-10 mb-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             <div className="relative w-full h-80 md:h-96 mb-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-lg p-6">
               <Image
+                priority={true}
                 src="/nfts/0.jpeg"
                 alt="nft"
                 layout="fill"
@@ -280,6 +283,7 @@ export default function Home() {
             </div>
             <div className="relative w-full h-80 md:h-96 mb-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-lg p-6">
               <Image
+                priority={true}
                 src="/nfts/1.jpeg"
                 alt="nft"
                 layout="fill"
@@ -288,6 +292,7 @@ export default function Home() {
             </div>
             <div className="relative w-full h-80 md:h-96 mb-6 shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-lg p-6">
               <Image
+                priority={true}
                 src="/nfts/2.jpeg"
                 alt="nft"
                 layout="fill"
@@ -325,6 +330,7 @@ export default function Home() {
                   }`}
                 >
                   <Image
+                    priority={true}
                     src={`/nfts/${nftId % 3}.jpeg`}
                     alt="nft"
                     layout="fill"
