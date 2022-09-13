@@ -6,7 +6,6 @@ import { Footer, Navbar } from "../components";
 import { abi } from "../utils/data";
 
 export default function Home() {
-  const [networkId, setNetworkId] = useState(null);
   const [account, setAccount] = useState(null);
   const [nftIds, setNftIds] = useState([]);
   const [balance, setBalance] = useState(0);
@@ -16,6 +15,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
   const [results, setResults] = useState(null);
+  const [web3Loaded, setWeb3Loaded] = useState(false);
 
   const nftContractAddress = process.env.CONTRACT_ADDRESS;
 
@@ -38,8 +38,14 @@ export default function Home() {
         setAccount(accounts[0]);
       });
       var web3i = new Web3(provider);
+      let networkIdi = await web3i.eth.net.getId();
+      if (networkIdi !== 80001) {
+        setLoading(false);
+        alert("Please connect to Polygon Mumbai Testnet");
+        return;
+      }
+      setWeb3Loaded(true);
       setWeb3(web3i);
-      setNetworkId(await web3i.eth.net.getId());
       const nftContracti = new web3i.eth.Contract(abi, nftContractAddress);
       setNftContract(nftContracti);
       try {
@@ -65,6 +71,7 @@ export default function Home() {
       }
       setLoading(false);
     } else {
+      setLoading(false);
       alert("Metamask Not found");
     }
   };
@@ -240,7 +247,9 @@ export default function Home() {
         </>
       ) : null}
 
-      {!account ? (
+      {loading ? (
+        <h2 className="mt-12 text-center">Loading...</h2>
+      ) : !web3Loaded ? (
         <center>
           <h2 className="mt-24">Let&apos;s Play</h2>
           <h1 className="mt-6 md:mt-12 text-4xl md:text-7xl font-bold">
@@ -257,8 +266,6 @@ export default function Home() {
             Connect Wallet
           </button>
         </center>
-      ) : loading ? (
-        <h2 className="mt-12 text-center">Loading...</h2>
       ) : nftIds?.length < 1 ? (
         <div className="text-center mt-8">
           <h2 className="mb-8">You Will Get 3 NFTs after Mint</h2>

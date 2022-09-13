@@ -29,9 +29,9 @@ export const Navbar = () => {
           <div className="z-10 w-full h-full absolute inset-0 bg-black opacity-40"></div>
           <div className="z-50 absolute inset-0 px-4 flex justify-center items-center">
             <div className="relative bg-white text-center rounded-xl p-6 w-full lg:mx-32">
-              <h2>Info About The Game</h2>
+              <h2 className="text-2xl md:text-6xl">Info About The Game</h2>
               <br />
-              <p>
+              <p className="text-sm md:text-lg">
                 Its your favourite game Rock, Paper, Scissors on Blockchain. For
                 playing this game you need to connect your metamask to{" "}
                 <a
@@ -46,7 +46,7 @@ export const Navbar = () => {
                 the game.
               </p>
               <br />
-              <p>
+              <p className="text-sm md:text-lg">
                 You can get Free MATIC Testnet tokens from{" "}
                 <a
                   className="text-orange-600"
@@ -58,14 +58,14 @@ export const Navbar = () => {
                 </a>
               </p>
               <br />
-              <p>
+              <p className="text-sm md:text-lg">
                 The game is played with the help of smart contract. The smart
                 contract is deployed on the polygon testnet. You need to give
-                0.01 MATIC (Testnet) to play and you win, you will get 0.02
-                MATIC (Testnet) as a Reward. If the Game is a draw, you will get
-                your 0.01 MATIC (Testnet) back.
+                0.01 MATIC to play and you win, you will get 0.02 MATIC as a
+                Reward. If the Game is a draw, you will get your 0.01 MATIC
+                back.
               </p>
-              <p className="mt-6">
+              <p className="text-sm md:text-lg mt-3">
                 <a
                   href="https://testnets.opensea.io/collection/rps-fever-nft"
                   target="_blank"
@@ -79,9 +79,7 @@ export const Navbar = () => {
                   </button>
                 </a>
               </p>
-              <br />
-              <br />
-              <p>
+              <p className="text-sm md:text-lg mt-3">
                 Made with ❤️ by{" "}
                 <a
                   className="text-orange-600"
@@ -89,7 +87,7 @@ export const Navbar = () => {
                   target="_blank"
                   rel="noreferrer noopener"
                 >
-                  Abhishek Shakya (AbhiXShakya)
+                  AbhiXShakya
                 </a>
               </p>
               <button
