@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply text-4xl md:text-6xl font-bold;
+  }
+
+  ::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: orange;
+  }
+
+  ::selection {
+    color: white;
+    background: orange;
+  }
+}
